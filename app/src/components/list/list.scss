@@ -1,0 +1,45 @@
+@function vw($px) {
+    @return ($px/750)*100vw;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+// 搜索框
+.search {
+    width: 100%;
+    height: vw(88);
+    padding: 10px 0;
+    background: #ff464e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .options {
+        float: left;
+        margin-right: vw(30);
+
+        img {
+            width: vw(48);
+            height: vw(48);
+        }
+    }
+    input {
+        width: vw(590);
+        height: vw(60);
+        background: #fff;
+        border: none;
+        border-radius: 30px;
+    }
+    .more {
+        float: right;
+        margin-left: vw(15);
+
+        img {
+            width: vw(48);
+            height: vw(48);
+        }
+    }
+
+
+}
