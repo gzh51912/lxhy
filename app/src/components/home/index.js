@@ -19,21 +19,13 @@ import {getHome,getPing} from "../../api/request"
             }
             
      }
-    //  点击改变颜色
-     changColor=(index)=>{
-       
-        let headli=document.getElementsByClassName("headli")
-        for(var i=0;i<headli.length;i++){
-            headli[i].style.color=""
-        }
-        headli[index].style.color="#ff464e"
-
-     }
+    
     //  实例化轮播图
     slider(){
         new Swiper ('.swiper-container', {
             // direction: 'vertical', // 垂直切换选项
             loop: true, // 循环模式选项
+            allowTouchMove: true,   // 允许触摸滑动
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false,
@@ -51,12 +43,25 @@ import {getHome,getPing} from "../../api/request"
         getHome(1).then(res=>this.setState({homelist1:res}) )
         getHome(2).then(res=>this.setState({homelist2:res}) )
         getHome(3).then(res=>this.setState({homelist3:res}) )
-        getPing().then(res=>this.setState({ping:res}) )
-
-        
-        
+        getPing().then(res=>this.setState({ping:res}) )   
           
      }
+     //  点击改变颜色,跳到分类页
+     changColor=(index)=>{
+       
+        let headli=document.getElementsByClassName("headli")
+        for(var i=0;i<headli.length;i++){
+            headli[i].style.color=""
+        }
+        headli[index].style.color="#ff464e"
+        this.props.history.push("/list")
+      
+        
+     }
+    //  跳转到详情页
+    toDetail=(gid)=>{
+        this.props.history.push("/detail",{gid})
+    }
     render() {
         // console.log(this.props);
        let {homelist1,homelist2,homelist3,ping}=this.state
@@ -64,13 +69,15 @@ import {getHome,getPing} from "../../api/request"
         return (
         <div>
             {/*  搜索框 */}
-            <div className="search">
-                <div className="options"><img src={require("./img/options.png")} alt=""/></div>
-                <input placeholder="输入关键词搜索"  style={{fontSize:"16px"}} type="text"/>
-                <div className="more">
-                    <img src={require("./img/more.png")} alt=""/>
-                </div>
-            </div> 
+            <div className="searchWarp">
+                <div className="search">
+                    <div className="options"><img src={require("./img/options.png")} alt=""/></div>
+                    <input placeholder="输入关键词搜索"  style={{fontSize:"12px"}} type="text"/>
+                    <div className="more">
+                        <img src={require("./img/more.png")} alt=""/>
+                    </div>
+                </div> 
+            </div>
             {/* 头部列表  */}
             <ul className="toplist">
                 {data1.map((item,index)=><li key={item} onClick={this.changColor.bind(this,index)} className="headli">{item}</li>)}
@@ -116,7 +123,7 @@ import {getHome,getPing} from "../../api/request"
                         <span className="tejia_more">更多></span>
                     </div>
                      {homelist1.map(item=>
-                    <li className="listItem" key={item.gid}>
+                    <li className="listItem" key={item.gid} onClick={this.toDetail.bind(this,item.gid)}>
                         <img src={item.osrc}  alt=""/>
                         <div className="listItem_details">
                             <p>{item.otitle}</p>
@@ -134,7 +141,7 @@ import {getHome,getPing} from "../../api/request"
                         <span className="tejia_more">更多></span>
                     </div>
                      {homelist2.map(item=>
-                    <li className="listItem" key={item.gid}>
+                    <li className="listItem" key={item.gid} onClick={this.toDetail.bind(this,item.gid)}>
                         <img src={item.osrc}  alt=""/>
                         <div className="listItem_details">
                             <p>{item.otitle}</p>
@@ -152,7 +159,7 @@ import {getHome,getPing} from "../../api/request"
                         <span className="tejia_more">更多></span>
                     </div>
                      {homelist3.map(item=>
-                    <li className="listItem" key={item.gid}>
+                    <li className="listItem" key={item.gid} onClick={this.toDetail.bind(this,item.gid)}>
                         <img src={item.osrc}  alt=""/>
                         <div className="listItem_details">
                             <p>{item.otitle}</p>

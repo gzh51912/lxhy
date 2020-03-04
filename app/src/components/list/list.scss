@@ -6,40 +6,86 @@ body {
     flex-direction: column;
 }
 // 搜索框
-.search {
-    width: 100%;
+.searchWarp{
     height: vw(88);
-    padding: 10px 0;
-    background: #ff464e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .search {
+        width: 100%;
+        height: vw(88);
+        padding: 10px 0;
+        background: #ff464e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 10;
+        right: 0;
+        left: 0;
+        .options {
+            float: left;
+            margin-right: vw(30);
 
-    .options {
-        float: left;
-        margin-right: vw(30);
+            img {
+                width: vw(48);
+                height: vw(48);
+            }
+        }
+        input {
+            width: vw(590);
+            height: vw(60);
+            background: #fff;
+            border: none;
+            border-radius: 30px;
+        }
+        .more {
+            float: right;
+            margin-left: vw(15);
 
-        img {
-            width: vw(48);
-            height: vw(48);
+            img {
+                width: vw(48);
+                height: vw(48);
+            }
+        }
+
+
+    }
+    }
+.category{
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    .cate-left{
+        width: 25%;
+        height: vw(1334);
+        position: absolute;
+        left: 0;
+        ul{
+            height: 100%;
+            background-color: #efeff4;
+            li{
+               
+                a{
+                    display: block;
+                    width: 100%;
+                    height: vw(101.2);
+                    text-align: center;
+                    border-bottom: 1px solid #c8c7cc;
+                    border-right: 1px solid #c8c7cc;
+                    line-height: vw(101.2);
+                    color: black;
+                }
+               .active{
+                color: #1890ff;
+                background: white;
+                } 
+            }
+            
         }
     }
-    input {
-        width: vw(590);
-        height: vw(60);
-        background: #fff;
-        border: none;
-        border-radius: 30px;
+    .cate-right{
+        position: absolute;
+        width: 75%;
+        height: vw(1334);
+        overflow-y: scroll;
+        right: 0;
     }
-    .more {
-        float: right;
-        margin-left: vw(15);
-
-        img {
-            width: vw(48);
-            height: vw(48);
-        }
-    }
-
-
 }

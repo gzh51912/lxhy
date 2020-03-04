@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import Loadable from 'react-loadable'
+// 一级路由
 var Home=Loadable({  //异步加载组件
     loader:()=>import("../components/home"),
     loading:()=><div>loading.....</div>
@@ -13,8 +14,16 @@ var List = Loadable({
     loader:()=>import("../components/list"),
     loading:()=><div>loading.....</div>
 })
+var List2 = Loadable({
+    loader:()=>import("../components/list2"),
+    loading:()=><div>loading.....</div>
+})
 var Cart = Loadable({
-    loader:()=>import("../components/cart"),
+    loader:()=>import("../components/cart"), 
+    loading:()=><div>loading.....</div>
+})
+var Detail = Loadable({
+    loader:()=>import("../components/detail"),
     loading:()=><div>loading.....</div>
 })
 
@@ -26,6 +35,7 @@ var Login = Loadable({
     loader:()=>import("../components/login"),
     loading:()=><div>loading.....</div>
 })
+// 二级路由
 
 var Flower = Loadable({
     loader:()=>import("../components/flower"),
@@ -38,6 +48,10 @@ var Cake = Loadable({
 })
 var Katong = Loadable({
     loader:()=>import("../components/katong"),
+    loading:()=><div>loading.....</div>
+})
+var Green = Loadable({
+    loader:()=>import("../components/green"),
     loading:()=><div>loading.....</div>
 })
 var Busy = Loadable({
@@ -53,6 +67,7 @@ var Ever = Loadable({
     loading:()=><div>loading.....</div>
 })
 
+// 一级路由
 export const routes =[
     {
         path:'/home',
@@ -67,6 +82,14 @@ export const routes =[
         component:List
     },
     {
+        path:'/list2',
+        component:List2
+    },
+    {
+        path:'/detail',
+        component:Detail   
+    },
+    {
         path:'/login',
         component:Login
     },
@@ -79,6 +102,7 @@ export const routes =[
         component:NotFound
     }
 ]
+// 二级路由
 
 export const subRoutes =[
     {
@@ -92,6 +116,11 @@ export const subRoutes =[
     {
         path:'/list/katong',
         component:Katong,
+        
+    },
+    {
+        path:'/list/green',
+        component:Green,
         
     },
     {

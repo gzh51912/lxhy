@@ -1,0 +1,43 @@
+@function vw($px) {
+    @return ($px/750)*100vw;
+}
+.conright{
+    .catager{
+        display: block;
+        width: 95%;
+        height: vw(66.4);
+        text-align: center;
+        padding: 6px 12px;
+        margin: 5px;
+        color: #dd524d;
+        background: #efeff4;
+        border: 1px solid #dd524d;
+    }
+    .con-right{
+        width: 95%;
+        overflow: hidden;
+        .con-lis{
+           margin-bottom: 10px;
+           a{
+            padding-left: 10px;
+            color: black;
+           }
+           ul{
+            padding: 5px 0;
+            padding-left: 8vw;
+            border-bottom: 1px #cccccc solid;
+            overflow: hidden;
+            margin-left: 10px;
+            color: #666;
+            li{
+               float: left;
+               padding-left: 9px;
+               margin: 5px;  
+
+            }
+           
+           }
+        }
+    }
+}
+  

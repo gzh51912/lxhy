@@ -43,11 +43,20 @@ class App extends React.Component {
   componentDidMount(){
     document.title="首页"
     this.changeTitle()
+    // console.log(this.props.location.pathname);
+    // 在url路径上输入路径时，标题会改变
+    switch (this.props.location.pathname) {
+      case "/detail":document.title="详情页" ; break;
+      case "/login":document.title="登录页" ; break;
+      case "/reg":document.title="注册页" ; break;
+      case "/list2":document.title="列表页" ; break;
+  }
   }
   changeTitle(){
     this.setState({
         visible:true
       })
+    // 监听路由路由的变化，标题会改变
       this.props.history.listen(location=>{
           console.log(location.pathname);
         switch (location.pathname) {
@@ -56,15 +65,17 @@ class App extends React.Component {
             case "/list":document.title="分类" ; break;
             case "/cart":document.title="购物车" ; break;
             case "/mine":document.title="个人主页" ; break;
+            case "/detail":document.title="详情页" ; break;
+
             default:
                 if(location.pathname.includes("/list/")){
                     document.title="分类"
                   } 
                   else{
                     //显示404页面时候，隐藏导航
-                    this.setState({
-                      visible:false
-                    })
+                    // this.setState({
+                    //   visible:false
+                    // })
                   }
         }
           

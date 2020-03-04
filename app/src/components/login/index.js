@@ -1,26 +1,26 @@
 import React, { Component } from 'react'
 import { Form, Icon, Input, Button, Card } from 'antd';
-import {login} from "../../api/request"
+// import {login} from "../../api/request"
  class Login extends Component {
-    handleSubmit = e => {
-        e.preventDefault();
-        this.props.form.validateFields((err, values) => {
-            console.log(values);
+    // handleSubmit = e => {
+    //     e.preventDefault();
+    //     this.props.form.validateFields((err, values) => {
+    //         console.log(values);
             
-            if (!err) {
-               //登陆
-                login(values.username,values.password).then((res)=>{
-                   console.log(res);
+    //         if (!err) {
+    //            //登陆
+    //             login(values.username,values.password).then((res)=>{
+    //                console.log(res);
                    
-                    if(res.status ===0 && res.data.login){
-                         sessionStorage.setItem("username",values.username);
-                         sessionStorage.setItem("token",res.data.token);
-                         this.props.history.push("/home/list")
-                    }
-                })
-            }
-        });
-    };
+    //                 if(res.status ===0 && res.data.login){
+    //                      sessionStorage.setItem("username",values.username);
+    //                      sessionStorage.setItem("token",res.data.token);
+    //                      this.props.history.push("/home/list")
+    //                 }
+    //             })
+    //         }
+    //     });
+    // };
     render() {
         const { getFieldDecorator } = this.props.form;
         return (

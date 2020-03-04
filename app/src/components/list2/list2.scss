@@ -1,0 +1,150 @@
+li,ul,dl,dd,dt{
+    list-style: none;
+  }
+  html {
+    // font-size: 13.34vw
+    font-size: 100px;
+  }
+// 头部
+.headWarp{
+    overflow: hidden;
+    .head{
+        width: 100%;
+        height: 0.44rem;
+        line-height: 0.44rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background:  #ff464e;
+        color: white;
+        text-align: center;
+        h1{
+            width: 76%;
+            float: left;
+            color: white;
+            font-size: 0.17rem;
+        }
+        .headLeft{
+            width: 12%;
+            height: 100%;
+            float: left;
+        }
+        .headRight{
+            height: 100%;
+            width: 12%;
+            float: right;
+        }
+    }
+}
+// 导航
+.alltopWarp{
+    margin-top: 0.44rem;
+    height: 0.44rem;
+    width: 100%;
+    text-align: center;
+    font-size: 0.16rem;
+    background: rgba(236, 243, 243, 0.5);
+    .alltop{
+      width: 20%;
+      float: left;
+      .alla{
+        color: #888888;
+        line-height: 0.44rem;
+        
+      }
+      
+    }
+  
+    .footpic{
+      float: right;
+    }
+  }
+
+// 内容
+.contentbox{
+    width: 100%;
+    height: 6rem;
+    background: white;
+    overflow: auto;
+    .goodsitem{
+      width:45%;
+      height: 2.54rem;
+      margin-left: 0.11rem;
+      border: 1px solid #ddd; 
+      margin-bottom: 0.1rem;
+      float: left;
+    .goodsa{
+      display: block;
+      .goodspic{
+        display: block;
+        .list2img{
+          width: 1.6rem;
+          height:1.7rem ; 
+          width: 100%;
+        }
+      }
+      dl{
+        // width: 1.73rem;
+        height: 0.63rem;
+        margin-top: 0.1rem;
+        dt{
+          // width: 1.67rem;
+          height: 0.488rem;
+          .goodtitle{
+          font-size: 0.12rem;
+          height: 0.24rem;
+          line-height: 0.24rem;
+          color: black;
+          text-align: left;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          font-weight: normal;
+          width: 100%;
+          display: block;
+          overflow: hidden;
+          }
+        }
+        .goods-sale{
+          .goods-price{
+          color: #ec5464;
+          display: block;
+          float: left;
+          font-size: 0.14rem;
+          line-height: 0.14rem;
+          em{
+            display: inline-block;
+            vertical-align: top;
+            font-style: normal;
+          }
+          }
+        }
+        .goods-assist{
+          display: block;
+          overflow: hidden;
+          .goods-sold{
+            color: #999;
+            display: block;
+            float: right;
+            font-size: 0.12rem;
+            line-height: 0.14rem;
+            padding-bottom: 0.10rem;
+          }
+        }
+      }
+    }
+    
+  }
+  .list2bottom{
+    height:1rem;
+    background:white;
+    line-height: 1rem;
+    font-size: 0.12rem;
+    text-align: center;
+    clear: both;
+    margin-bottom: 0.5rem;
+    }
+   .footpic{
+     float: right;
+    
+   }
+  }

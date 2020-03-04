@@ -1,0 +1,131 @@
+li,ul,dl,dd,dt{
+    list-style: none;
+  }
+  @function vw($px) {
+    @return ($px/750) * 100vw;
+  }
+// 头部
+.headWarp{
+    overflow: hidden;
+    .head{
+        width: 100%;
+        height: vw(88);
+        line-height: vw(88);
+        position: fixed;
+        top: 0;
+        left: 0;
+        background:  #ff464e;
+        color: white;
+        text-align: center;
+        h1{
+            width: 76%;
+            float: left;
+            color: white;
+            font-size: vw(34);
+        }
+        .headLeft{
+            width: 12%;
+            height: 100%;
+            float: left;
+        }
+        .headRight{
+            height: 100%;
+            width: 12%;
+            float: right;
+        }
+    }
+}
+// 商品信息
+.detailWarp {
+    .detCont {
+      font-size: vw(32);
+      width: vw(750);
+      height: vw(162.6);
+      border-bottom: 1px #cccccc solid;
+      text-align: left;
+      .detitleA {
+        height: vw(41.6);
+        text-indent: vw(22);
+        color: black;
+      }
+      .deprice {
+        color: red;
+        font-weight: bold;
+        margin-top: vw(15);
+        text-indent: vw(22);
+      }
+      .dedesWarp {
+        height: vw(30);
+        font-size: vw(28);
+        margin-top: vw(15);
+        color: black;
+
+        .denum {
+          text-indent: vw(22);
+          width: 50%;
+          float: left;
+        }
+        .dedes {
+          width: 50%;
+          float: left;
+        }
+      }
+    }
+    .detcopmu {
+      width: vw(750);
+      height: vw(96);
+      border-bottom: 1px #cccccc solid;
+      #btns {
+        text-align: left;
+        font-size: vw(28);
+        display: block;
+        line-height: vw(96);
+        height: vw(96);
+        margin-left: 11px;
+        
+        
+      }
+    }
+    .detpicWarp {
+      overflow: auto;
+      width: 100%;
+      .detpic {
+        width: 100%;
+      }
+    }
+  }
+.detailBottom{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: vw(100.8);
+    background: #efeff4;
+    z-index: 9999;
+    text-align: center;
+   
+    span{
+        width: 25%;
+        height: 100%;
+        float: left;
+        line-height: vw(100.8);
+        a{
+            font-size: 12px;
+            color: black;
+        }
+    }
+    .service {
+        font-size: 20px;
+    }
+    .tel {
+        font-size: 20px;
+    }
+    .toCart{
+        background: #FFA747;
+        color: white;
+    }
+    .buy{
+        background: #FF6600;
+        color: white;
+
+    }
+}
