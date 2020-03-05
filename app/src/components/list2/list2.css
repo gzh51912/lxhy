@@ -1,19 +1,11 @@
-li, ul, dl, dd, dt {
-  list-style: none;
-}
-
-html {
-  font-size: 100px;
-}
-
 .headWarp {
   overflow: hidden;
 }
 
 .headWarp .head {
   width: 100%;
-  height: 0.44rem;
-  line-height: 0.44rem;
+  height: 11.73333vw;
+  line-height: 11.73333vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -26,7 +18,7 @@ html {
   width: 76%;
   float: left;
   color: white;
-  font-size: 0.17rem;
+  font-size: 4.53333vw;
 }
 
 .headWarp .head .headLeft {
@@ -42,11 +34,11 @@ html {
 }
 
 .alltopWarp {
-  margin-top: 0.44rem;
-  height: 0.44rem;
+  margin-top: 11.73333vw;
+  height: 11.73333vw;
   width: 100%;
   text-align: center;
-  font-size: 0.16rem;
+  font-size: 4.26667vw;
   background: rgba(236, 243, 243, 0.5);
 }
 
@@ -57,7 +49,7 @@ html {
 
 .alltopWarp .alltop .alla {
   color: #888888;
-  line-height: 0.44rem;
+  line-height: 11.73333vw;
 }
 
 .alltopWarp .footpic {
@@ -66,17 +58,17 @@ html {
 
 .contentbox {
   width: 100%;
-  height: 6rem;
+  height: 160vw;
   background: white;
   overflow: auto;
 }
 
 .contentbox .goodsitem {
   width: 45%;
-  height: 2.54rem;
-  margin-left: 0.11rem;
+  height: 67.73333vw;
+  margin-left: 2.93333vw;
   border: 1px solid #ddd;
-  margin-bottom: 0.1rem;
+  margin-bottom: 2.66667vw;
   float: left;
 }
 
@@ -89,24 +81,24 @@ html {
 }
 
 .contentbox .goodsitem .goodsa .goodspic .list2img {
-  width: 1.6rem;
-  height: 1.7rem;
+  width: 42.66667vw;
+  height: 45.33333vw;
   width: 100%;
 }
 
 .contentbox .goodsitem .goodsa dl {
-  height: 0.63rem;
-  margin-top: 0.1rem;
+  height: 16.8vw;
+  margin-top: 2.66667vw;
 }
 
 .contentbox .goodsitem .goodsa dl dt {
-  height: 0.488rem;
+  height: 13.01333vw;
 }
 
 .contentbox .goodsitem .goodsa dl dt .goodtitle {
-  font-size: 0.12rem;
-  height: 0.24rem;
-  line-height: 0.24rem;
+  font-size: 3.2vw;
+  height: 6.4vw;
+  line-height: 6.4vw;
   color: black;
   text-align: left;
   text-overflow: ellipsis;
@@ -121,8 +113,8 @@ html {
   color: #ec5464;
   display: block;
   float: left;
-  font-size: 0.14rem;
-  line-height: 0.14rem;
+  font-size: 3.73333vw;
+  line-height: 3.73333vw;
 }
 
 .contentbox .goodsitem .goodsa dl .goods-sale .goods-price em {
@@ -140,19 +132,19 @@ html {
   color: #999;
   display: block;
   float: right;
-  font-size: 0.12rem;
-  line-height: 0.14rem;
-  padding-bottom: 0.10rem;
+  font-size: 3.2vw;
+  line-height: 3.73333vw;
+  padding-bottom: 2.66667vw;
 }
 
 .contentbox .list2bottom {
-  height: 1rem;
+  height: 26.66667vw;
   background: white;
-  line-height: 1rem;
-  font-size: 0.12rem;
+  line-height: 26.66667vw;
+  font-size: 3.2vw;
   text-align: center;
   clear: both;
-  margin-bottom: 0.5rem;
+  margin-bottom: 13.33333vw;
 }
 
 .contentbox .footpic {

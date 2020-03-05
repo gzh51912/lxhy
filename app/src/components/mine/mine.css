@@ -1,0 +1,93 @@
+.headWarp {
+  overflow: hidden;
+}
+
+.headWarp .head {
+  width: 100%;
+  height: 11.73333vw;
+  line-height: 11.73333vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ff464e;
+  color: white;
+  text-align: center;
+}
+
+.headWarp .head h1 {
+  width: 76%;
+  float: left;
+  color: white;
+  font-size: 4.53333vw;
+}
+
+.headWarp .head .headLeft {
+  width: 12%;
+  height: 100%;
+  float: left;
+}
+
+.headWarp .head .headRight {
+  height: 100%;
+  width: 12%;
+  float: right;
+}
+
+.loginImg {
+  width: 100%;
+  margin-top: 11.73333vw;
+  height: 41.6vw;
+  background-image: url("./loginBG.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100% 48vw;
+}
+
+.loginImg .imgWarp {
+  padding: 8% 0 13% 35%;
+}
+
+.loginImg .imgWarp img {
+  margin-left: 23px;
+}
+
+.loginImg .imgWarp p {
+  color: black;
+  font-size: 3.73333vw;
+}
+
+.context {
+  overflow: hidden;
+  background: #efeff4;
+  padding-bottom: 18.33333vw;
+}
+
+.context ul {
+  width: 100%;
+  background-color: white;
+}
+
+.context ul li {
+  height: 11.41333vw;
+  padding: 2.93333vw 4vw 2.93333vw 0;
+  font-size: 3.73333vw;
+  margin-left: 4vw;
+  border-bottom: 1px solid #c8c7cc;
+}
+
+.context ul li i {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.context ul li span {
+  float: right;
+}
+
+.context .ul1 {
+  margin-top: 2.66667vw;
+}
+
+.context .ul2, .context .ul3 {
+  margin-top: 5.33333vw;
+}

@@ -35,6 +35,10 @@ var Login = Loadable({
     loader:()=>import("../components/login"),
     loading:()=><div>loading.....</div>
 })
+var Reg = Loadable({
+    loader:()=>import("../components/reg"),
+    loading:()=><div>loading.....</div>
+})
 // 二级路由
 
 var Flower = Loadable({
@@ -92,6 +96,10 @@ export const routes =[
     {
         path:'/login',
         component:Login
+    },
+    {
+        path:'/reg',
+        component:Reg
     },
     {
         path:'/mine',

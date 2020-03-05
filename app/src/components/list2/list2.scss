@@ -1,17 +1,13 @@
-li,ul,dl,dd,dt{
-    list-style: none;
-  }
-  html {
-    // font-size: 13.34vw
-    font-size: 100px;
-  }
+@function vw($px) {
+  @return ($px/750)*100vw;
+}
 // 头部
 .headWarp{
     overflow: hidden;
     .head{
         width: 100%;
-        height: 0.44rem;
-        line-height: 0.44rem;
+        height: vw(88);
+        line-height: vw(88);
         position: fixed;
         top: 0;
         left: 0;
@@ -22,7 +18,7 @@ li,ul,dl,dd,dt{
             width: 76%;
             float: left;
             color: white;
-            font-size: 0.17rem;
+            font-size: vw(34);
         }
         .headLeft{
             width: 12%;
@@ -38,18 +34,18 @@ li,ul,dl,dd,dt{
 }
 // 导航
 .alltopWarp{
-    margin-top: 0.44rem;
-    height: 0.44rem;
+    margin-top: vw(88);
+    height: vw(88);
     width: 100%;
     text-align: center;
-    font-size: 0.16rem;
+    font-size: vw(32);
     background: rgba(236, 243, 243, 0.5);
     .alltop{
       width: 20%;
       float: left;
       .alla{
         color: #888888;
-        line-height: 0.44rem;
+        line-height: vw(88);
         
       }
       
@@ -63,37 +59,37 @@ li,ul,dl,dd,dt{
 // 内容
 .contentbox{
     width: 100%;
-    height: 6rem;
+    height: vw(1200);
     background: white;
     overflow: auto;
     .goodsitem{
       width:45%;
-      height: 2.54rem;
-      margin-left: 0.11rem;
+      height: vw(508);
+      margin-left: vw(22);
       border: 1px solid #ddd; 
-      margin-bottom: 0.1rem;
+      margin-bottom: vw(20);
       float: left;
     .goodsa{
       display: block;
       .goodspic{
         display: block;
         .list2img{
-          width: 1.6rem;
-          height:1.7rem ; 
+          width: vw(320);
+          height:vw(340) ; 
           width: 100%;
         }
       }
       dl{
         // width: 1.73rem;
-        height: 0.63rem;
-        margin-top: 0.1rem;
+        height: vw(126);
+        margin-top: vw(20);
         dt{
           // width: 1.67rem;
-          height: 0.488rem;
+          height: vw(97.6);
           .goodtitle{
-          font-size: 0.12rem;
-          height: 0.24rem;
-          line-height: 0.24rem;
+          font-size: vw(24);
+          height: vw(48);
+          line-height:vw(48);
           color: black;
           text-align: left;
           text-overflow: ellipsis;
@@ -109,8 +105,8 @@ li,ul,dl,dd,dt{
           color: #ec5464;
           display: block;
           float: left;
-          font-size: 0.14rem;
-          line-height: 0.14rem;
+          font-size: vw(28);
+          line-height: vw(28);
           em{
             display: inline-block;
             vertical-align: top;
@@ -125,9 +121,9 @@ li,ul,dl,dd,dt{
             color: #999;
             display: block;
             float: right;
-            font-size: 0.12rem;
-            line-height: 0.14rem;
-            padding-bottom: 0.10rem;
+            font-size: vw(24);
+            line-height: vw(28);
+            padding-bottom: vw(20);
           }
         }
       }
@@ -135,13 +131,13 @@ li,ul,dl,dd,dt{
     
   }
   .list2bottom{
-    height:1rem;
+    height:vw(200);
     background:white;
-    line-height: 1rem;
-    font-size: 0.12rem;
+    line-height: vw(200);
+    font-size: vw(24);
     text-align: center;
     clear: both;
-    margin-bottom: 0.5rem;
+    margin-bottom: vw(100);
     }
    .footpic{
      float: right;

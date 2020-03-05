@@ -1,0 +1,61 @@
+@function vw($px) {
+    @return ($px/750)*100vw;
+  }
+  // 头部
+  .headWarp{
+      overflow: hidden;
+      .head{
+          width: 100%;
+          height: vw(88);
+          line-height: vw(88);
+          position: fixed;
+          top: 0;
+          left: 0;
+          background:  #ff464e;
+          color: white;
+          text-align: center;
+          h1{
+              width: 76%;
+              float: left;
+              color: white;
+              font-size: vw(34);
+          }
+          .headLeft{
+              width: 12%;
+              height: 100%;
+              float: left;
+          }
+          .headRight{
+              height: 100%;
+              width: 12%;
+              float: right;
+          }
+      }
+  }
+  .contex{
+      padding-bottom: vw(240);
+      overflow: hidden;
+      margin-top: vw(88);
+      ul{
+        margin: vw(20);
+        li{
+            text-align: center;
+        }
+        .tu{
+            font-size: vw(80);
+            font-weight: bold;
+        }
+        .tolist{
+            margin-top: vw(40);
+            span{
+                display: block;
+                width: vw(164);
+                height: vw(66.4);
+                padding: vw(12) vw(24);
+                color: #ff464e;
+                border: #ff464e 1px solid;
+                margin-left: 38vw;
+            }
+        }
+      }
+  }

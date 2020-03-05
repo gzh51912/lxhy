@@ -27,7 +27,11 @@ export const goodsPrice =(cid,cid1,cid2,sortType)=>{
 export const getDetail=(gid)=>{
     return axios.get("/goods/cartlist",{params:{gid}})
 }
-
-export const upload=(data)=>{
-    return axios.post("/upload",data)
+// 注册
+export const reg=(phone,password)=>{
+    return axios.post("/user/reg",{phone,password})
+}
+// 登录
+export const login=(phone,password)=>{
+    return axios.post("/user/login",{phone,password})
 }

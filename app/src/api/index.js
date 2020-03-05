@@ -16,6 +16,7 @@ service.interceptors.request.use((config)=>{
 // //响应拦截器
 service.interceptors.response.use((res)=>{
    if(res.data.status===-1){
+    //    console.log(res);       
        window.location.href="/login"
    }
     return res.data

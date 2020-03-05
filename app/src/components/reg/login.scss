@@ -1,0 +1,122 @@
+@function vw($px) {
+    @return ($px/750)*100vw;
+  }
+  // å¤´éƒ¨
+  .headWarp{
+      overflow: hidden;
+      .head{
+          width: 100%;
+          height: vw(88);
+          line-height: vw(88);
+          position: fixed;
+          top: 0;
+          left: 0;
+          background:  #ff464e;
+          color: white;
+          text-align: center;
+          h1{
+              width: 76%;
+              float: left;
+              color: white;
+              font-size: vw(34);
+          }
+          .headLeft{
+              width: 12%;
+              height: 100%;
+              float: left;
+          }
+          .headRight{
+              height: 100%;
+              width: 12%;
+              float: right;
+          }
+      }
+  }
+
+
+//   内容
+  .contex{
+      width: 100%;
+      padding-bottom: vw(240);
+      margin-top: vw(88);
+      background: #efeff4;
+      height: vw(1334);
+     overflow: hidden;
+    //  表单
+     #login-form{
+        width: 100%;
+        height: vw(160);
+        margin-top: vw(40);
+        border-top: 1px solid #c8c7cc;
+        border-bottom: 1px solid #c8c7cc;
+        background-color: white;
+        #one{
+        border-bottom: 1px solid #c8c7cc;
+           
+        }
+        .mui-input-row{
+          height: vw(80);
+
+          label{
+              width: 30%;
+              padding: vw(22) vw(30);
+              line-height: vw(80);
+              color: black;
+          }
+          input{
+              width: 70%;
+              padding: vw(5) vw(30) vw(5) vw(30);
+              margin-bottom: 5px;
+          }
+      }  
+    } 
+    // 验证码
+    .check{ 
+        height: vw(80);
+        span{
+            display: block;
+            margin-top: vw(20);
+            color: black;
+            line-height: vw(80);  
+            height: vw(76); 
+            width: 45%;
+            background: white;
+            border:1px solid #c8c7cc ;
+            text-align: center;
+        }
+        .left{
+            float: left;
+            margin-left: vw(10);
+        }
+        .right{
+            float: right;
+            margin-right: vw(10);
+
+        }
+    }
+    // 注册
+    .mui-content-padded{
+        margin: vw(50) vw(20) vw(20);
+        button{
+            color: #fff;
+            border: 1px solid #dd524d;
+            background-color: #FF9900;
+            padding: vw(10) vw(24);
+            width: 100%;
+            font-size: vw(36);
+            font-weight: 400;
+        }
+        .link-area{
+            margin-top: vw(50);
+            text-align: center;
+            a{
+                color: #666666;
+                font-size: vw(24);
+            }
+            span{
+                padding: 0 vw(16);
+            }
+        }
+    }
+  }
+  
