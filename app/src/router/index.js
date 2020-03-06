@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React from 'react'
 import Loadable from 'react-loadable'
 // 一级路由
 var Home=Loadable({  //异步加载组件
@@ -22,7 +22,7 @@ var Cart = Loadable({
     loader:()=>import("../components/cart"), 
     loading:()=><div>loading.....</div>
 })
-var Detail = Loadable({
+var Detail=Loadable({
     loader:()=>import("../components/detail"),
     loading:()=><div>loading.....</div>
 })

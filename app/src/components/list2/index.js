@@ -11,6 +11,8 @@ export default class List2 extends Component {
     }
     componentDidMount(){
         let {cid,cid1,cid2}=this.props.location.state
+        // let {cid,cid1,cid2}=this.props.params
+
         getList2(cid,cid1,cid2).then(res=>this.setState({
             list2:res,
             flag:true,
@@ -67,6 +69,7 @@ export default class List2 extends Component {
     }
     // 跳转到详情页
     toDetail=(gid)=>{
+        // return    <Redirect to={{pathname:"/detail",state:{gid}}} ></Redirect>
         this.props.history.push("/detail",{gid})
     }
     render() {

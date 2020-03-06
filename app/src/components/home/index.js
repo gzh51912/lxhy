@@ -25,7 +25,7 @@ import {getHome,getPing} from "../../api/request"
         new Swiper ('.swiper-container', {
             // direction: 'vertical', // 垂直切换选项
             loop: true, // 循环模式选项
-            allowTouchMove: true,   // 允许触摸滑动
+            // allowTouchMove: true,   // 允许触摸滑动
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false,

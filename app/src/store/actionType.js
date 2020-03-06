@@ -1,23 +1,26 @@
 export default{
-    finish(id){
-        return (dispatch)=>{
-            dispatch({
-                type:"START"  //loading true
-            })
-            setTimeout(()=>{
-                 dispatch({
-                     type:"FINISH",
-                     id
-                 })
-                 dispatch({   //loading false
-                     type:"OVER"
-                 })
-            },1500)
+    joinCart(goods){
+        return {
+            type:"JOINCART",
+            goods
         }
     },
-    finishAll(){
+    changeNum(gid,p){
         return {
-            type:"FINISHALL"
+            type:"CHANGE",
+            gid,p
+        }
+    },
+    select(gid){
+        return {
+            type:"SELECT",
+            gid
+        }
+    },
+    selectAll(checkedAll){
+        return {
+            type:"SELECTALL",
+            checkedAll,
         }
     }
 }

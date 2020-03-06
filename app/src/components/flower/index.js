@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import "./flower.css"
 import {getFlower} from "../../api/request"
+
+// import {hashHistory} from 'react-router'
 export default class Flower extends Component {
     constructor(props){
         super(props)
@@ -11,7 +13,7 @@ export default class Flower extends Component {
             flowerList:res
         }))
     }
-    // 点击时改变颜色，并跳转得详情页
+    // 点击时改变颜色，并跳转到二级列表
     toDetail=(index1,cid,cid1,cid2)=>{
         let oul=document.getElementsByClassName("con-right")[index1]
         let olis=oul.getElementsByTagName("li")
@@ -21,6 +23,7 @@ export default class Flower extends Component {
         }
         olis[cid2-1].style.color="#1890ff"
         this.props.history.push("/list2",{cid,cid1,cid2})
+        // hashHistory.push("/list2",{cid,cid1,cid2})
     }
     render() {
         let {flowerList}=this.state
@@ -35,7 +38,9 @@ export default class Flower extends Component {
                                 <a>{item.cname1}</a>
                                 <ul>
                                     {item.contain.split(',').map((ele,index2)=>  
-                                    <li key={ele} onClick={this.toDetail.bind(this,index1,item.cid,item.cid1,index2+1)}>{ele}</li>
+                                    <li key={ele} onClick={this.toDetail.bind(this,index1,item.cid,item.cid1,index2+1)}>
+                                        
+                                        {ele}</li>
                                     )}
                                  
     

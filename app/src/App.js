@@ -65,7 +65,6 @@ class App extends React.Component {
             case "/list":document.title="分类" ; break;
             case "/cart":document.title="购物车" ; break;
             case "/mine":document.title="个人主页" ; break;
-            case "/detail":document.title="详情页" ; break;
 
             default:
                 if(location.pathname.includes("/list/")){

@@ -34,29 +34,30 @@
 }
 
 .contex {
-  padding-bottom: 32vw;
+  background-color: #efeff4;
+  height: 164.86667vw;
   overflow: hidden;
   margin-top: 11.73333vw;
 }
 
-.contex ul {
+.contex .cartOne {
   margin: 2.66667vw;
 }
 
-.contex ul li {
+.contex .cartOne li {
   text-align: center;
 }
 
-.contex ul .tu {
+.contex .cartOne .tu {
   font-size: 10.66667vw;
   font-weight: bold;
 }
 
-.contex ul .tolist {
+.contex .cartOne .tolist {
   margin-top: 5.33333vw;
 }
 
-.contex ul .tolist span {
+.contex .cartOne .tolist span {
   display: block;
   width: 21.86667vw;
   height: 8.85333vw;
@@ -64,4 +65,165 @@
   color: #ff464e;
   border: #ff464e 1px solid;
   margin-left: 38vw;
+}
+
+.contex .cartul {
+  overflow: hidden;
+}
+
+.contex .cartul .cartli {
+  height: 19.8vw;
+  padding: 8px 0;
+  border-bottom: solid 1px #eee;
+  background: white;
+}
+
+.contex .cartul .cartli .cartcont {
+  overflow: hidden;
+  height: 19.8vw;
+}
+
+.contex .cartul .cartli .cartcont .cartcheck {
+  width: 5%;
+  height: 3.41333vw;
+  float: left;
+  margin-left: 12.8px;
+  margin-top: 20.8px;
+  position: relative;
+}
+
+.contex .cartul .cartli .cartcont .cartcheck #onebox {
+  width: 3.41333vw;
+  height: 3.41333vw;
+  position: absolute;
+  top: 5px;
+  left: 3px;
+}
+
+.contex .cartul .cartli .cartcont .cartpic {
+  display: block;
+  width: 20%;
+  height: 16vw;
+  padding: 3.2px;
+  float: left;
+  margin-left: 4.8px;
+}
+
+.contex .cartul .cartli .cartcont .cartpic .carta {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.contex .cartul .cartli .cartcont .cartpic .carta .cartimg {
+  height: 100%;
+  border: solid 1px #eee;
+}
+
+.contex .cartul .cartli .cartcont .cartitle {
+  font-size: 3.73333vw;
+  width: 40%;
+  height: 16.32vw;
+  text-align: left;
+  float: left;
+}
+
+.contex .cartul .cartli .cartcont .cartitle .cartt {
+  font-size: 3.73333vw;
+  width: 26.66667vw;
+  height: 5.73333vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contex .cartul .cartli .cartcont .cartitle .carti {
+  font-size: 3.2vw;
+  color: gray;
+  width: 26.66667vw;
+  height: 5.25333vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contex .cartul .cartli .cartcont .cartitle em {
+  color: #db4453;
+}
+
+.contex .cartul .cartli .cartcont .cartcontroal {
+  width: 30%;
+  float: right;
+}
+
+.contex .cartul .cartli .cartcont .cartcontroal #cartbtns {
+  text-align: left;
+  font-size: 3.73333vw;
+  margin-top: 10px;
+  margin-left: 11px;
+}
+
+.contex .cartul .cartli .cartcont .cartcontroal #cartbtns .del {
+  margin-left: 15.6666vw;
+}
+
+.contex .cartul .cartli .cartcont .cartcontroal #cartbtns .cartbtncom1,
+.contex .cartul .cartli .cartcont .cartcontroal #cartbtns .cartbtncom {
+  width: 8vw;
+  height: 5.33333vw;
+}
+
+.contex .cartul .cartli .cartcont .cartcontroal #cartbtns .cartbtncom1 {
+  height: 4.53333vw;
+  text-align: center;
+}
+
+.contex .cartBottom {
+  width: 100%;
+  height: 13.73333vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: white;
+}
+
+.contex .cartBottom div {
+  float: left;
+  line-height: 13.73333vw;
+}
+
+.contex .cartBottom .cartInput {
+  width: 10%;
+  text-align: center;
+}
+
+.contex .cartBottom .allPrice {
+  width: 60%;
+  text-align: center;
+}
+
+.contex .cartBottom .allPrice .one {
+  width: 50%;
+  float: left;
+  color: black;
+}
+
+.contex .cartBottom .allPrice .two {
+  width: 50%;
+  color: #DB4453;
+  font-weight: 600;
+  float: right;
+  font-style: italic;
+  font-size: 5.33333vw;
+}
+
+.contex .cartBottom .toBuy {
+  width: 30%;
+  text-align: center;
+  background-color: #ED5564;
+}
+
+.contex .cartBottom .toBuy span {
+  color: white;
 }

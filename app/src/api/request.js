@@ -25,7 +25,7 @@ export const goodsPrice =(cid,cid1,cid2,sortType)=>{
 } 
 // 详情页数据
 export const getDetail=(gid)=>{
-    return axios.get("/goods/cartlist",{params:{gid}})
+    return axios.get("/goods/detlist",{params:{gid}})
 }
 // 注册
 export const reg=(phone,password)=>{
@@ -34,4 +34,8 @@ export const reg=(phone,password)=>{
 // 登录
 export const login=(phone,password)=>{
     return axios.post("/user/login",{phone,password})
+}
+// 加入购物车
+export const cartlist=(gid)=>{
+    return axios.get("/goods/cartlist",{params:{gid}})
 }

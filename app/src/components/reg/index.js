@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Icon} from 'antd';
+import { Icon} from 'antd';
 import {reg} from "../../api/request"
 import "./login.css"
  class Reg extends Component {
@@ -37,7 +37,7 @@ import "./login.css"
                     
                               }else if (res.status === "exit"){
                                   alert("手机号码已注册")
-                              }else if (res.status == "incomplete"){
+                              }else if (res.status === "incomplete"){
                                 alert("请完善注册信息");
                               } 
                         })

@@ -34,8 +34,16 @@ import "./login.css"
                             sessionStorage.setItem("username",value1)
                             // 跳转
                             console.log(this.props);
-                            let {path}=this.props.location.state
-                            this.props.history.push(path);
+                            // 如果是从详情页等跳到登录页,返回详情页，并把参数带过去
+                            if(localStorage.getItem("pathname")){
+                                this.props.history.push(localStorage.getItem("pathname"),{gid:localStorage.getItem("gid")});
+
+                            }else{
+                                // 点击我的页面
+                                let {path}=this.props.location.state
+                                this.props.history.push(path); 
+                            }
+                            
                 
                           }else if(res.status === "error"){
                             alert("用户名或登录密码不正确！")

@@ -16,8 +16,15 @@ service.interceptors.request.use((config)=>{
 // //响应拦截器
 service.interceptors.response.use((res)=>{
    if(res.data.status===-1){
-    //    console.log(res);       
+    //    console.log(res); 
+    // 从详情页中跳转到购物车，如果没登录token验证失败跳到登录页，
+    localStorage.setItem("pathname",window.location.pathname)
+    // 详情页的商品id
+    localStorage.setItem("gid",res.data.gid)     
+
        window.location.href="/login"
+    // console.log(window.location);
+    
    }
     return res.data
 })

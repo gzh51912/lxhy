@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Icon } from 'antd';
+import { Icon,Carousel } from 'antd';
 import "./detail.css"
-import Swiper from "swiper"
-import "swiper/css/swiper.css"
-import {getDetail} from "../../api/request"
-export default class Detail extends Component {
+import {getDetail,cartlist} from "../../api/request"
+import actionType from "../../store/actionType"
+import {connect} from "react-redux"
+ class Detail extends Component {
     constructor(props){
         super(props)
         console.log(this.props.location.state);
@@ -15,9 +15,9 @@ export default class Detail extends Component {
         
     }
     componentDidMount(){
-        this.slider()
         let {gid}=this.props.location.state
-        getDetail(gid).then(res=>this.setState({detList:res[0]}))
+        // 发请求获取详情页的数据
+        getDetail(gid).then(res=>{this.setState({detList:res[0]})})
       console.log(gid);
 
 
@@ -27,24 +27,7 @@ export default class Detail extends Component {
     back=()=>{
         this.props.history.go(-1)
     }
-     //  实例化轮播图
-     slider(){
-        new Swiper ('.swiper-container', {
-            // direction: 'vertical', // 垂直切换选项
-            loop: true, // 循环模式选项
-            allowTouchMove: true,   // 允许触摸滑动
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-                waitForTransition: false,
-            },
-            // 如果需要分页器
-            pagination: {
-              el: '.swiper-pagination',
-            },
-            
-          })
-    }
+   
     // 改变输入框的值
     changNum=(index)=>{
         let {num}=this.state
@@ -56,31 +39,44 @@ export default class Detail extends Component {
         }           
         
     }
-    joinCart=()=>{
+    // 点击加入购物车
+    joinCart=(gid)=>{
+        let {num}=this.state               
+        cartlist(gid).then(res=>{
+            if(res.length!=0){
+            res[0].num=num;
+            res[0].checked=false
+            this.props.joinCart(res[0])
+            alert("成功添加到购物车")
+            
+            }
+            
+        })
         
+        // console.log(this.props.det.cartlist);
     }
     input=()=>{
     }
     render() {
         let {detList,num}=this.state;
+        
+        
         return (
             <div>
                 <Icon type="left" style={{fontSize:"20px",
                 fontWeight:"bold",position:"absolute",top:"20px",left:"20px",zIndex:99}} 
                 onClick={this.back}/>
                   {/* 轮播图 */}
-                <div className="swiper-container">
-                    <div className="swiper-wrapper">
-                         <div className="swiper-slide">
-                         <img src={detList.gpic} style={{width:"100%",height:"375px"}}/>
+                  <Carousel autoplay>
+                        <div>
+                         <img src={detList.gpic} style={{width:"100%",height:"375px"}} alt=""/>
                          </div>
-                         <div className="swiper-slide">
-                         <img src={detList.gpic} style={{width:"100%",height:"375px"}} />
+                         <div>
+                         <img src={detList.gpic} style={{width:"100%",height:"375px"}} alt=""/>
                          </div>
-                                        
-                    </div>
-                    <div className="swiper-pagination"></div>
-                </div>
+                    
+                        </Carousel>
+         
                  {/* 商品信息  */}
                 <div className="detailWarp">
                 <div className="detCont">
@@ -106,12 +102,14 @@ export default class Detail extends Component {
                    
                     </div>
                 </div>
+                {/* 点击加入购物车 */}
                 <div className="detailBottom">
                     <span className="service"><Icon type="message" /><a>客服</a></span>
                     <span className="tel"><Icon type="phone" /><a>电话</a></span>
-                    <span className="toCart" onClick={this.joinCart}>加入购物车</span>
+                    <span className="toCart" onClick={this.joinCart.bind(this,detList.gid)}>加入购物车</span>
                     <span className="buy">立即购买</span>
                 </div>
+                {/* 评论图片 */}
                 <div className="detpicWarp">
                     <img src={require("./d1.png")} alt="" className="detpic" />
                     <img src={require("./d2.png")} alt="" className="detpic" />
@@ -130,3 +128,4 @@ export default class Detail extends Component {
         )
     }
 }
+export default connect(state=>state,actionType)(Detail)
