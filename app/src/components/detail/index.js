@@ -52,8 +52,10 @@ import {connect} from "react-redux"
             }
             
         })
-        
-        // console.log(this.props.det.cartlist);
+    }
+    // 点击立即购买
+    goBuy(){
+        alert("亲亲，先加入购物车哦~")
     }
     input=()=>{
     }
@@ -107,7 +109,7 @@ import {connect} from "react-redux"
                     <span className="service"><Icon type="message" /><a>客服</a></span>
                     <span className="tel"><Icon type="phone" /><a>电话</a></span>
                     <span className="toCart" onClick={this.joinCart.bind(this,detList.gid)}>加入购物车</span>
-                    <span className="buy">立即购买</span>
+                    <span className="buy" onClick={this.goBuy}>立即购买</span>
                 </div>
                 {/* 评论图片 */}
                 <div className="detpicWarp">

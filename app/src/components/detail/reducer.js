@@ -10,7 +10,6 @@ export default (state = initialState, action) => {
         // 如果购物车里没有商品，直接添加
         if(newState.cartlist.length===0){
             newState.cartlist.push(action.goods)
-           console.log(newState.cartlist);
 
             return newState
         }else if(newState.cartlist.length!==0){
@@ -22,27 +21,34 @@ export default (state = initialState, action) => {
             //   购物车没有相同的商品，直接添加
               newState.cartlist.push(action.goods)
           }
-           console.log(newState.cartlist);
             
           return newState
         }
-        
-     case "CHANGE":   
-        // 购物车数量的加减
+     // 购物车数量的加减   
+     case "CHANGE":     
         var newState=JSON.parse(JSON.stringify(state))
         var index=newState.cartlist.findIndex(item=>item.gid===action.gid)
         newState.cartlist[index].num+=action.p;
         return newState
+    // 选择单个商品
      case "SELECT":
         var newState=JSON.parse(JSON.stringify(state))
         var index=newState.cartlist.findIndex(item=>item.gid===action.gid)
         newState.cartlist[index].checked=!newState.cartlist[index].checked
         return newState
-        case "SELECTALL":
+    // 全选按钮
+    case "SELECTALL":
         var newState=JSON.parse(JSON.stringify(state))
-        newState.cartlist.forEach(item=>item.checked=action.checkedAll)
-        
+        newState.cartlist.forEach(item=>item.checked=action.checkedAll)    
         return newState
+
+    // 删除单个商品
+    case "DELETE":
+        var newState=JSON.parse(JSON.stringify(state))
+        var index=newState.cartlist.findIndex(item=>item.gid===action.gid)
+        newState.cartlist.splice(index,1)
+        return newState
+
     default:
         return state
     }

@@ -23,7 +23,7 @@ export default class Flower extends Component {
         }
         olis[cid2-1].style.color="#1890ff"
         this.props.history.push("/list2",{cid,cid1,cid2})
-        // hashHistory.push("/list2",{cid,cid1,cid2})
+        // hash History.push("/list2",{cid,cid1,cid2})
     }
     render() {
         let {flowerList}=this.state

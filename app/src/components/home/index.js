@@ -58,6 +58,10 @@ import {getHome,getPing} from "../../api/request"
       
         
      }
+    //  跳转到分类页面
+    toList=()=>{
+        this.props.history.push("/list")
+    }
     //  跳转到详情页
     toDetail=(gid)=>{
         this.props.history.push("/detail",{gid})
@@ -95,7 +99,7 @@ import {getHome,getPing} from "../../api/request"
                 <div className="swiper-pagination"></div>
             </div>
             {/* 分类  */}
-            <ul className="sortList" >
+            <ul className="sortList" onClick={this.toList}>
                 {sort.map(item=> 
                     <li key={item.sortName}>
                         <span style={{background:item.background}}>
@@ -120,7 +124,7 @@ import {getHome,getPing} from "../../api/request"
                 <ul className="listUl">
                     <div className="tejia">
                         <span className="tejia_flower">恋人鲜花</span>
-                        <span className="tejia_more">更多></span>
+                        <span className="tejia_more" onClick={this.toList}>更多></span>
                     </div>
                      {homelist1.map(item=>
                     <li className="listItem" key={item.gid} onClick={this.toDetail.bind(this,item.gid)}>
@@ -138,7 +142,7 @@ import {getHome,getPing} from "../../api/request"
              <ul className="listUl">
                     <div className="tejia">
                         <span className="tejia_flower">新品上架</span>
-                        <span className="tejia_more">更多></span>
+                        <span className="tejia_more" onClick={this.toList}>更多></span>
                     </div>
                      {homelist2.map(item=>
                     <li className="listItem" key={item.gid} onClick={this.toDetail.bind(this,item.gid)}>
@@ -156,7 +160,7 @@ import {getHome,getPing} from "../../api/request"
              <ul className="listUl">
                     <div className="tejia">
                         <span className="tejia_flower">特价鲜花</span>
-                        <span className="tejia_more">更多></span>
+                        <span className="tejia_more" onClick={this.toList}>更多></span>
                     </div>
                      {homelist3.map(item=>
                     <li className="listItem" key={item.gid} onClick={this.toDetail.bind(this,item.gid)}>

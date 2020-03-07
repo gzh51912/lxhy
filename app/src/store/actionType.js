@@ -22,5 +22,12 @@ export default{
             type:"SELECTALL",
             checkedAll,
         }
+    },
+    delGoods(gid){
+        return {
+            type:"DELETE",
+            gid,
+    
+        }
     }
 }

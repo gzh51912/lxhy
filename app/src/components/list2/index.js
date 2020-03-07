@@ -72,6 +72,7 @@ export default class List2 extends Component {
         // return    <Redirect to={{pathname:"/detail",state:{gid}}} ></Redirect>
         this.props.history.push("/detail",{gid})
     }
+    
     render() {
         let {list2}=this.state
         return (
@@ -100,7 +101,7 @@ export default class List2 extends Component {
                 <div className="contentbox">
                     {list2.map(item=>
                         <li className="goodsitem" key={item.gid} onClick={this.toDetail.bind(this,item.gid)}>
-                            <a href="" className="goodsa">
+                            <div href="" className="goodsa" >
                                 <span className="goodspic">
                                     <img src={item.gpic} alt="" className="list2img"/>
                                 </span>
@@ -117,7 +118,7 @@ export default class List2 extends Component {
                                         <span className="goods-sold">{item.gdes}</span> 
                                     </dd>
                                 </dl>
-                                </a>
+                                </div>
                         </li>
                 )}
 
@@ -129,3 +130,17 @@ export default class List2 extends Component {
         )
     }
 }
+// export default class List2 extends Component {
+//     toDetail=()=>{
+//         // return    <Redirect to={{pathname:"/detail",state:{gid}}} ></Redirect>
+//         this.props.history.push("/detail")
+//     }
+//     render() {
+//         return (
+//             <div>
+                
+//                 <li onClick={this.toDetail}>列表页</li>
+//             </div>
+//         )
+//     }
+// }

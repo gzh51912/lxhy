@@ -6,10 +6,9 @@ import actionType from "../../store/actionType"
  class Cart extends Component {
     constructor(props){
         super(props)
-        this.state={
-            allChecked:false
-        }
+
     }
+   
      // 返回上一级
      back=()=>{
         this.props.history.go(-1)
@@ -30,9 +29,10 @@ import actionType from "../../store/actionType"
     input=()=>{
 
     }
-    // 选择多选
+    // 选择单个商品
     select=(gid)=>{
         this.props.select(gid)
+       
     }
     // 全选
     selectAll=()=>{
@@ -43,10 +43,20 @@ import actionType from "../../store/actionType"
         })
 
     }
+    // 删除功能
+    del=(gid)=>{
+        if(window.confirm("您确定要删除该商品吗？")){
+            this.props.delGoods(gid)
+
+        }
+        
+    }
     render() {
         console.log(this.props);
-        let {cartlist,length,allMonery} =this.props
-        let {allChecked} =this.state
+        let {cartlist,length,allMonery,reverseSelectAll} =this.props
+        
+        console.log(reverseSelectAll());
+
         return (
             <div>
                 {/* 头部 */}
@@ -71,12 +81,11 @@ import actionType from "../../store/actionType"
                 {/* 购物车有商品时 */}
                 {length==0?"":
                 <ul className="cartul">
-                    
                     {cartlist.map(item=>   
                      <li className="cartli" key={item.gid}>
                         <div className="cartcont">
                         <div className="cartcheck">
-                            <input type="checkbox" id="onebox" checked={item.checked} onClick={this.select.bind(this,item.gid)}/>
+                            <input type="checkbox" id="onebox" checked={item.checked} onClick={this.select.bind(this,item.gid)} onChange={this.input}/>
                         </div>
                         <div className="cartpic">
                             <a href="" className="carta">
@@ -90,7 +99,7 @@ import actionType from "../../store/actionType"
                         </div>
                         <div className="cartcontroal">
                             <div id="cartbtns">
-                                <img src={require("./cart.png")} alt="" className="del"  />
+                                <img src={require("./cart.png")} alt="" className="del"  onClick={this.del.bind(this,item.gid)}/>
                                 <button style={{width:"30px",height:"20px",
                                 lineHeight: "20px",border:"1px solid #ccc"}} onClick={this.changNum.bind(this,item.gid,item.num,-1)}>-</button>
                             
@@ -110,7 +119,7 @@ import actionType from "../../store/actionType"
                 {/* 购物车底部 */}
                 <div className="cartBottom">
                     <div className="cartInput">
-                       <input type="checkbox" checked={allChecked} onClick={this.selectAll} onChange={this.input}></input> 
+                       <input type="checkbox" checked={reverseSelectAll()} onClick={this.selectAll} onChange={this.input}></input> 
                     </div>
                     <div className="allPrice">
                         <span className="one">合计总金额为：</span>
@@ -127,18 +136,26 @@ import actionType from "../../store/actionType"
         )
     }
 }
-var mapStste=(state)=>{
+let mapStste=(state)=>{
     return {
         cartlist:state.det.cartlist,
         length:state.det.cartlist.length,
         changeNum:state.changeNum,
+        // 计算总金额
         allMonery(){
-            var s =0;
-            var selectArr=state.det.cartlist.filter(item=>item.checked);
+            let s =0;
+            let selectArr=state.det.cartlist.filter(item=>item.checked);
             selectArr.forEach(item=>{
                 s+=item.gprice*item.num
             })
             return s
+        },
+        // 反全选功能
+        reverseSelectAll(){
+            let allLength=state.det.cartlist.length
+            let selectLength=state.det.cartlist.filter(item=>item.checked).length
+            return allLength===selectLength?true:false
+            
         }
     }
 }
