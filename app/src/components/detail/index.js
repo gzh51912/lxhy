@@ -25,7 +25,7 @@ import {connect} from "react-redux"
     }
     // 返回上一级
     back=()=>{
-        this.props.history.go(-1)
+        this.props.history.go(-2)
     }
    
     // 改变输入框的值

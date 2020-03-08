@@ -6,12 +6,14 @@ import actionType from "../../store/actionType"
  class Cart extends Component {
     constructor(props){
         super(props)
-
+        this.state={
+            allChecked:false
+        }
     }
    
      // 返回上一级
      back=()=>{
-        this.props.history.go(-1)
+        this.props.history.push("/list")
     }
      // 跳转到列表页
     toList=()=>{
